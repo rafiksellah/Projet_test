@@ -1,0 +1,77 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}OffreEmploi{% endblock %}
+
+{% block body %}
+    <div class="page-wrapper">
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title"> Article</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <div class="d-md-flex">
+                        <ol class="breadcrumb ms-auto">
+                            <li><a href="{{path('app_admin_offre_demploi_index')}}" class="fw-normal">Dashboard</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ offre_emploi.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Titre</th>
+                                <td>{{ offre_emploi.title }}</td>
+                            </tr>
+                            <tr>
+                                <th>Experience</th>
+                                <td>{{ offre_emploi.experience }}</td>
+                            </tr>
+                            <tr>
+                                <th>TypeContrat</th>
+                                <td>{{ offre_emploi.contratType }}</td>
+                            </tr>
+                            <tr>
+                                <th>Horaires</th>
+                                <td>{{ offre_emploi.horaires }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{{ offre_emploi.description }}</td>
+                            </tr>
+                            <tr>
+                                <th>Mission</th>
+                                <td>{{ offre_emploi.mission|raw }}</td>
+                            </tr>
+                            <tr>
+                                <th>Profil recherché </th>
+                                <td>{{ offre_emploi.profilRecherhcer|raw }}</td>
+                            </tr>
+                            <tr>
+                                <th>Avantages </th>
+                                <td>{{ offre_emploi.posteAvantage|raw }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date de publication</th>
+                                <td>{{ offre_emploi.createdAt ? offre_emploi.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{{ offre_emploi.statut ? 'Oui' : 'Non' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+{% endblock %}
