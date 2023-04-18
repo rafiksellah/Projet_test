@@ -43,8 +43,8 @@
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="d-flex justify-content-between">
-                                <div> Publié le: {{offre_emploi.createdAt? offre_emploi.createdAt|date('Y-m-d H:i:s') : '' }} </div>
-                                <div><a class="btn btn-outline-dark mt-auto" href="#">Consulter</a></div>
+                                <div> Publié le: {{offre_emploi.createdAt? offre_emploi.createdAt|date('Y-m-d') : '' }} </div>
+                                <div><a class="btn btn-outline-dark mt-auto" href="{{path('app_detail_offre', {'id': offre_emploi.id}) }}">Consulter</a></div>
                             </div>
                         </div>
                     </div>

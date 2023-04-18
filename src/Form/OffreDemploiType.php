@@ -27,9 +27,9 @@ class OffreDemploiType extends AbstractType
             ->add('contratType',ChoiceType::class, [
                 'label' => 'Type de contrat',
                 'choices'  => [
-                    'CDI' => 'contrat de travail à durée indéterminée',
-                    'CDD' => 'contrat de travail à durée déterminée',
-                    'CTT ' => 'contrat de travail temporaire',
+                    'CDI' => 'contrat à durée indéterminée',
+                    'CDD' => 'contrat à durée déterminée',
+                    'CTT ' => 'contrat temporaire',
                 ]
                 ])
             ->add('horaires',ChoiceType::class, [

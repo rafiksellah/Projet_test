@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home {% endblock %}
+
+{% block body %}
+<main>
+    <div class="py-5 mt-4 container">
+        <img height="400" width="100%" src="{{asset('assets/img/detail.jpg')}}"  alt="Image">
+    </div>
+    <section class="container mt-2">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>{{offre_emploi.title}}</h2>
+                <p><i class="fa fa-map-marker ml-2">{{offre_emploi.region}}</i></p>
+            </div>
+            <div class="col-md-4">
+                <p class="text-small">Mise en ligne le : {{offre_emploi.createdAt? offre_emploi.createdAt|date('Y-m-d ') : '' }}</p>
+            </div>
+            <div class="col-md-4">
+                <button width="100%" type="button" class="btn btn-primary">
+                    {{offre_emploi.experience}} <span> ans d'éxperience</span>
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button width="100%" type="button" class="btn btn-primary">
+                    {{offre_emploi.contratType}} 
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button width="100%" type="button" class="btn btn-primary">
+                    {{offre_emploi.horaires}} 
+                </button>
+            </div>
+        </div>
+        <div class="description mt-4">
+            <h2>Description du post</h2>
+            <p>{{offre_emploi.description|raw}}</p>
+        </div>
+        <div class="mission mt-4">
+            <h2>Mission</h2>
+            <p>{{offre_emploi.mission|raw}}</p>
+        </div>
+        <div class="mission mt-4">
+            <h2>Profil recherché</h2>
+            <p>{{offre_emploi.profilRecherhcer|raw}}</p>
+        </div>
+        <div class="avantage mt-4">
+            <h2>Avantages</h2>
+            <p>{{offre_emploi.posteAvantage|raw}}</p>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
+ 
+ 
+ 
+ 
+ 
+ 

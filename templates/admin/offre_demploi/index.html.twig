@@ -50,7 +50,7 @@
                                     <td>{{ offre_emploi.horaires }}</td>
                                     <td>{{ offre_emploi.region }}</td>
                                     <td>{{ offre_emploi.description|slice(0, 20) }}...</td>
-                                    <td>{{ offre_emploi.createdAt ? offre_emploi.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                                    <td>{{ offre_emploi.createdAt ? offre_emploi.createdAt|date('Y-m-d') : '' }}</td>
                                     <td>{{ offre_emploi.statut ? 'Oui' : 'Non' }}</td>
                                     <td>
                                         <a href="{{ path('app_admin_offre_demploi_show', {'id': offre_emploi.id}) }}"><i class="fa fa-search" aria-hidden="true"></i></a>
