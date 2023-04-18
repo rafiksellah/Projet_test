@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home {% endblock %}
+
+{% block body %}
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Nos Offres d'emploi</h1>
+        <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut neque earum tenetur numquam voluptatum amet maxime, quos eum repellendus animi voluptas voluptatem omnis aperiam nostrum alias, ipsam dicta quidem?</p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section >
+    <div class="container px-4 px-lg-5">
+        <div class="row">
+            {% for offre_emploi in offre_emplois %}
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-title">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img  class="card-img-top" src="{{asset('assets/img/user.png')}}" alt="...">
+                                </div>
+                                <div class="col-md-9">
+                                    <p>{{offre_emploi.title}}</p>
+                                    <p><b>{{offre_emploi.region}}</b></p>
+                                </div>
+                            </div>                        
+                        </div>
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <p><b>Experiences: {{offre_emploi.experience}} ans</b></p>
+                            <div class="text-small">
+                                {{offre_emploi.description|slice(0,60)}}
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                                <div> Publié le: {{offre_emploi.createdAt? offre_emploi.createdAt|date('Y-m-d H:i:s') : '' }} </div>
+                                <div><a class="btn btn-outline-dark mt-auto" href="#">Consulter</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+</main>
+{% endblock %}
